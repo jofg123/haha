@@ -438,13 +438,13 @@ def main():
 	updater.dispatcher.add_handler(MessageHandler(False, msg))
 	updater.dispatcher.add_error_handler(error_callback)
 
-	intervention_job = Job(divine_intervention, 3 * 60 * 60.0)
+        haha_job = Job(divine_intervention, 3 * 60 * 60.0)
 	update_tornament_job = Job(update_tornament, 10.0)
-	updater.job_queue.put(intervention_job)
+	updater.job_queue.put(haha_job)
 	updater.job_queue.put(update_tornament_job)
 
 	queue_job = Job(queue_reply, 0.035)
-	updater.job_queue.put(intervention_job)
+	updater.job_queue.put(queue_job)
 
 	logger.info('Starting polling...')
 	updater.start_polling()
