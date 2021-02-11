@@ -444,7 +444,7 @@ def main():
 	updater.job_queue.put(update_tornament_job)
 
 	queue_job = Job(queue_reply, 0.035)
-	updater.start_queue.put(queue_job)
+	updater.job_queue.put(intervention_job)
 
 	logger.info('Starting polling...')
 	updater.start_polling()
