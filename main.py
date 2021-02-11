@@ -29,7 +29,7 @@ queue = deque([])
 
 updater = Updater(config.TELEGRAM_TOKEN)
 
-def queue_reply(bot):
+def queue_reply(bot,job):
 	try:
 		message = queue.popleft()
 
@@ -444,7 +444,7 @@ def main():
 	updater.job_queue.put(update_tornament_job)
 
 	queue_job = Job(queue_reply, 0.035)
-	updater.job_queue.put(queue_job)
+	updater.start_queue.put(queue_job)
 
 	logger.info('Starting polling...')
 	updater.start_polling()
