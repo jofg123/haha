@@ -29,7 +29,7 @@ queue = deque([])
 
 updater = Updater(config.TELEGRAM_TOKEN)
 
-def queue_reply(bot, job):
+def queue_reply(bot):
 	try:
 		message = queue.popleft()
 
